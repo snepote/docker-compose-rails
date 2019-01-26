@@ -90,8 +90,10 @@ to sync changes in the `Gemfile.lock` to the host, followed by
 docker-compose up --build
 ```
 
-## Source
+## Sources
 [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails)
+[Creating a new Rails application project with Docker](https://github.com/IcaliaLabs/guides/wiki/Creating-a-new-Rails-application-project-with-Docker)
+[Testing Your Rails Application with Docker](https://blog.codeship.com/testing-rails-application-docker/)
 
 ## Running Rspec
 ### Rspec setup (one time only)
