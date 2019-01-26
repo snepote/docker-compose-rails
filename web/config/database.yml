@@ -5,6 +5,7 @@ default: &default
   username: postgres
   password:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  min_messages: log
 
 development:
   <<: *default
@@ -18,3 +19,4 @@ production:
   <<: *default
   database: web_production
   url: <%= ENV['DATABASE_URL'] %>
+  min_messages: notice

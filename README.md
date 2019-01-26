@@ -77,7 +77,7 @@ docker-compose down
 You can use the same terminal window in which you started the database, or another one where you have access to a command prompt. This is a clean way to stop the application.
 
 ## Rebuild the application
-f you make changes to the Gemfile or the Compose file to try out some different configurations, you need to rebuild. Some changes require only
+If you make changes to the Gemfile or the Compose file to try out some different configurations, you need to rebuild. Some changes require only
 ```bash
 docker-compose up --build
 ```
@@ -92,3 +92,30 @@ docker-compose up --build
 
 ## Source
 [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails)
+
+## Running Rspec
+### Rspec setup (one time only)
+Edit `Gemfile` and add Rspec gem to development and test group
+```bash
+group :development, :test do
+  gem 'rspec', '~> 3.8'
+  # ...
+end
+```
+and rebuild the application with
+```bash
+docker-compose run web bundle install
+docker-compose up --build
+```
+
+### Creat Rspec config files
+```bash
+docker-compose run web bundle exec rake rspec --init
+```
+
+### Run Rspec
+```bash
+docker-compose up -d
+docker-compose run -e "RAILS_ENV=test" web rake db:create db:migrate
+docker-compose run -e "RAILS_ENV=test" web bundle exec rspec
+```
