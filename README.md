@@ -67,6 +67,7 @@ To restart the application run `docker-compose up` in the project directory. Alt
 ```bash
 docker-compose up -d
 ```
+**Note:** allow a few seconds to start. Since is running on the background, you have no feedback to know when the application is ready to accept requests.
 
 ## Stop the application
 From the root directory of your project, run the following command:
