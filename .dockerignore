@@ -2,6 +2,3 @@
 .gitignore
 .env
 .dockerignore
-
-/web/.rspec
-/web/spec/*
